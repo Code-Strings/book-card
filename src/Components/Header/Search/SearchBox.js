@@ -1,9 +1,9 @@
-import { Container, Form, InputGroup} from "react-bootstrap"
+import {  Form, InputGroup} from "react-bootstrap"
 import "./SearchBox.css"
 
 export default function SearchBox() {
     return (
-        <Container className="p-5" style={{display:"flex"}}>
+        <div className="p-4" style={{display:"flex"}}>
             <InputGroup >
                 <Form.Control
                     placeholder="Search Book..."
@@ -13,6 +13,6 @@ export default function SearchBox() {
             <button className="custom-button" id="button-addon2" style={{height:"50px",width:"150px"}}>
                     Button
                 </button>
-        </Container>
+        </div>
     );
 }

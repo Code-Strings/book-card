@@ -14,10 +14,9 @@ function CardFront(props) {
           alt="book image"
         />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{props.data.title}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card&apos;s content.
+            Published Year: {props.data.year}
           </Card.Text>
           <button className="custom-button" onClick={props.handleFlip}>Book Info</button>
         </Card.Body>

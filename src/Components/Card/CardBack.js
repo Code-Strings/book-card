@@ -10,16 +10,18 @@ function CardBack(props) {
       <Card  >
         <Card.Img
           variant="top"
-          src="https://cdn-icons-png.flaticon.com/512/4072/4072307.png"
+          src="https://cdn-icons-png.flaticon.com/128/3145/3145497.png"
           style={{ width: "30%" ,margin:"20px"}}
           alt="book image"
         />
         <Card.Body>
-          <Card.Title>Book Details</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card&apos;s content.
-          </Card.Text>
+          <a className="link" href={props.data.link}>{props.data.link}</a>
+          <h6>
+            Author: {props.data.author}
+          </h6>
+          <h6>
+            Country of Origin: {props.data.country}
+          </h6>
           <button className="custom-button" onClick={props.handleFlip}>Back</button>
         </Card.Body>
       </Card>

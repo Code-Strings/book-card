@@ -2,7 +2,7 @@ import Header from "./Components/Header/Index";
 import "./styles.css";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Page from "./Components/Page/Index";
+import CardPage from "./Components/Page/Index";
 
 export default function App() {
   const myStyle = {
@@ -16,7 +16,7 @@ export default function App() {
     <div style={myStyle}>
     <Container className="App">
         <Header />
-        <Page />
+        <CardPage />
     </Container>
     </div>
   );

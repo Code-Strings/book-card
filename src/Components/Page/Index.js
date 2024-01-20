@@ -2,46 +2,19 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 //import Test from "../Card/Test";
-import Card from "../Card/Index";
+import useFetch from "../CustomHooks/useFetch";
+import FlipCard from "../Card/Index";
 
-function Page() {
+function CardPage() {
+  const { data } = useFetch();
+  console.log("Check here data n Page: ", data)
   return (
-    <Container fluid>
-      <Row className="mb-5">
-        <Col>
-          <Card />
-        </Col>
-        <Col>
-          <Card />
-        </Col>
-        <Col>
-          <Card />
-        </Col>
-      </Row>
-      <Row className="mb-5">
-        <Col>
-          <Card />
-        </Col>
-        <Col>
-          <Card />
-        </Col>
-        <Col>
-          <Card />
-        </Col>
-      </Row>
-      <Row className="mb-5">
-        <Col>
-          <Card />
-        </Col>
-        <Col>
-          <Card />
-        </Col>
-        <Col>
-          <Card />
-        </Col>
-      </Row>
-    </Container>
+    <>
+      {data.map((item, index) =>
+            <FlipCard BookData={item} key={`card-${index}`} />
+      )}
+    </>
   );
 }
 
-export default Page;
+export default CardPage;
