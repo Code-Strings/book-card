@@ -10,7 +10,7 @@ export default function FlipCard({BookData}) {
     const handleFlip = () => {
         setFlipped(!isFlipped);
     };
-    console.log("BookData inside Card from Page: ",BookData)
+    //console.log("BookData inside Card from Page: ",BookData)
     return (
          <>
                     <Container className={`flip-card ${isFlipped ? "flipped" : ""
