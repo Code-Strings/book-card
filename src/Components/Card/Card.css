@@ -1,15 +1,15 @@
 .card {
-	background: rgba(255, 255, 255, 0.2);
-	border-radius: 16px;
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	width: 18rem;
-	height: 22rem;
-	margin: 10px;
-	padding: auto;
-	color: white;
+	background: rgba(255, 255, 255, 0.2) !important;
+	border-radius: 16px !important;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+	backdrop-filter: blur(5px)!important;
+	-webkit-backdrop-filter: blur(5px)!important;
+	border: 1px solid rgba(255, 182, 182, 0.068)!important;
+	width: 18rem!important;
+	height: 22rem!important;
+	margin: 10px!important;
+	padding: auto!important;
+	color: white!important;
 }
 
 .flip-card {
@@ -55,8 +55,8 @@
 }
 
 .button {
-	position: absolute;
-	bottom: 5%;
-	left: 5%;
-	height: 50px;
+	position: absolute!important;
+	bottom: 5%!important;
+	left: 5%!important;
+	height: 50px!important;
 }

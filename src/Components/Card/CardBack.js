@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
 import "./Card.css";
 
 function CardBack(props) {
@@ -16,10 +14,10 @@ function CardBack(props) {
         />
         <Card.Body>
           <a className="link" href={props.data.link}>{props.data.title}</a>
-          <p>
+          <p className="mb-0">
             Author: {props.data.author}
           </p>
-          <p>
+          <p className="mb-0">
             Country of Origin: {props.data.country}
           </p>
           <p>

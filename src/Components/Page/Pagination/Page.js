@@ -1,16 +1,16 @@
 import React, { useState, useMemo } from 'react';
 import Pagination from './Pagination';
-import { Container, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import './Pagination.scss'
 import CardPage from '../Index';
 import useFetch from '../../CustomHooks/useFetch';
 
 let PageSize = 9;
-const url = "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json";
 
 export default function Page() {
     const [currentPage, setCurrentPage] = useState(1);
-    const { data, isLoading } = useFetch(url);
+    const { data, isLoading } = useFetch();
+    
     console.log("Check here Page data:", data, isLoading);
 
     const currentCardData = useMemo(() => {
