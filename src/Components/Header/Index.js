@@ -1,17 +1,11 @@
-import { Form, InputGroup} from "react-bootstrap"
-import Title from "./Title"
+import Title from "./Title";
+import "./Search/SearchBox.css"
+import SearchBox from "./Search/SearchBox";
+import useFetch from "../CustomHooks/useFetch";
+const url = "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json";
 
 export default function Header() {
-    return <><Title/><div className="p-4" style={{display:"flex"}}>
-    <InputGroup >
-        <Form.Control
-            placeholder="Search Book..."
-            aria-label="Search Book..."
-        />
-    </InputGroup>
-    <button className="custom-button" id="button-addon2" style={{height:"50px",width:"150px"}}>
-            Button
-        </button>
-</div></>
+  const { data } = useFetch(url);
+    return <><Title/><SearchBox data={data} Placeholder="Search Book..."/></>
   }
   

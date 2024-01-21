@@ -18,7 +18,7 @@ function CardFront(props) {
           <Card.Text>
             Published Year: {props.data.year}
           </Card.Text>
-          <button className="custom-button" onClick={props.handleFlip}>Book Info</button>
+          <button className="custom-button button" onClick={props.handleFlip}>Book Info</button>
         </Card.Body>
       </Card>
     </div>

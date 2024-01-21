@@ -51,4 +51,12 @@
 
 .link{
 	color: rgb(24, 2, 66);
+	font-style: italic;
+}
+
+.button {
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+	height: 50px;
 }

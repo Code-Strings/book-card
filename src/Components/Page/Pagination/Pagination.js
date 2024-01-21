@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import './Pagination.css';
+import './Pagination.scss';
 import { usePagination, DOTS } from '../../CustomHooks/usePaginatinHook';
 
 export default function Pagination(props) {

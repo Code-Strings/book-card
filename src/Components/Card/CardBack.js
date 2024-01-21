@@ -15,14 +15,17 @@ function CardBack(props) {
           alt="book image"
         />
         <Card.Body>
-          <a className="link" href={props.data.link}>{props.data.link}</a>
-          <h6>
+          <a className="link" href={props.data.link}>{props.data.title}</a>
+          <p>
             Author: {props.data.author}
-          </h6>
-          <h6>
+          </p>
+          <p>
             Country of Origin: {props.data.country}
-          </h6>
-          <button className="custom-button" onClick={props.handleFlip}>Back</button>
+          </p>
+          <p>
+            Language: {props.data.language}
+          </p>
+          <button className="custom-button button" onClick={props.handleFlip}>Back</button>
         </Card.Body>
       </Card>
     </div>

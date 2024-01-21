@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import Pagination from './Pagination';
-import useFetch from './useFetch';
-import { Container, Row, Spinner } from 'react-bootstrap';
-import './Pagination.css'
-import Card from '../../Card/Index';
+import { Container, Spinner } from 'react-bootstrap';
+import './Pagination.scss'
+import CardPage from '../Index';
+import useFetch from '../../CustomHooks/useFetch';
 
-let PageSize = 10;
+let PageSize = 9;
 const url = "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json";
 
 export default function Page() {
@@ -19,27 +19,19 @@ export default function Page() {
         return data.slice(firstPageIndex, lastPageIndex);
     }, [currentPage, data]);
 
-    const [isFlipped, setFlipped] = useState(false);
-    const handleFlip = () => {
-        setFlipped(!isFlipped);
-    };
-
     console.log("check here Page:", currentCardData)
     return (
         <>
-            {isLoading ? 
-            <Container fluid>
-                <Row>
-                    <Card isFlipped={isFlipped} handleFlip={handleFlip}/>
-                </Row>
-            </Container> : <Spinner className='center-spinner' animation="grow" />}
-            <Pagination
-                className="pagination-bar"
-                currentPage={currentPage}
-                totalCount={data.length}
-                pageSize={PageSize}
-                onPageChange={page => setCurrentPage(page)}
-            />
+            {isLoading ?
+                <><CardPage data={currentCardData} />
+                    <Pagination
+                        className="pagination-bar align-bottom"
+                        currentPage={currentPage}
+                        totalCount={data.length}
+                        pageSize={PageSize}
+                        onPageChange={page => setCurrentPage(page)}
+                    /></> : <Spinner className='center-spinner' animation="grow" />}
+
         </>
     );
 }

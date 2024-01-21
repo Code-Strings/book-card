@@ -2,12 +2,12 @@ import Header from "./Components/Header/Index";
 import "./styles.css";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-import CardPage from "./Components/Page/Index";
+import Page from "./Components/Page/Pagination/Page";
 
 export default function App() {
   const myStyle = {
-    background: "linear-gradient(320deg,#390b32,#e94057,#8a2387)",
-    height: "fixed-content",
+    background: "linear-gradient(320deg,#390b32,#672407,#6906c6)",
+    minHeight: "100vh",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center"
@@ -16,7 +16,7 @@ export default function App() {
     <div style={myStyle}>
     <Container className="App">
         <Header />
-        <CardPage />
+        <Page />
     </Container>
     </div>
   );

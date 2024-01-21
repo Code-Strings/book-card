@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from './Card';
+import CardPage from '../../Page/Index';
 
-function SearchList({ filteredPersons }) {
-  const filtered = filteredPersons.map(person =>  <Card key={person.id} person={person} />); 
+function SearchList({ items }) {
+  const filtered = items.map(items =>  <CardPage data={items} />); 
   return (
     <div>
       {filtered}
