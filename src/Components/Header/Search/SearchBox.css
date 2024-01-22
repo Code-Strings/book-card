@@ -1,3 +1,45 @@
-.custom-button{
-    margin-top:0 !important;
+.custom-button {
+    margin-top: 0 !important;
+}
+
+.custom-input {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    padding-left: 15px;
+    vertical-align: middle;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    height: 2.5rem;
+    width: auto;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgb(255, 255, 255, 0.3) !important;
+    color: white;
+}
+
+input::placeholder {
+    font-style: italic;
+    font-size: 1em;
+    padding: 5px;
+    color: white;
+}
+
+input[type=text]:focus {
+    border: none;
+    transition: ease-in-out, width .35s ease-in-out;
+}
+
+.icon {
+    height: 40px;
+    width: 41px;
+    background-color: rgb(255, 255, 255, 0.3) !important;
+    border: none;
+    vertical-align: middle;
+    border-radius: 0 5px 5px 0;
+    padding-right: 15px;
+    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+    background-size: 20px;
 }

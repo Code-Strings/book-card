@@ -7,19 +7,17 @@ import useFetch from '../../CustomHooks/useFetch';
 
 let PageSize = 9;
 
-export default function Page() {
+export default function Page(props) {
     const [currentPage, setCurrentPage] = useState(1);
-    const { data, isLoading } = useFetch();
-    
-    console.log("Check here Page data:", data, isLoading);
+    const { isLoading } = useFetch();
 
+    //caching the current page list
     const currentCardData = useMemo(() => {
         const firstPageIndex = (currentPage - 1) * PageSize;
         const lastPageIndex = firstPageIndex + PageSize;
-        return data.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage, data]);
+        return props.data.slice(firstPageIndex, lastPageIndex);
+    }, [currentPage, props.data]);
 
-    console.log("check here Page:", currentCardData)
     return (
         <>
             {isLoading ?
@@ -27,7 +25,7 @@ export default function Page() {
                     <Pagination
                         className="pagination-bar align-bottom"
                         currentPage={currentPage}
-                        totalCount={data.length}
+                        totalCount={props.data.length}
                         pageSize={PageSize}
                         onPageChange={page => setCurrentPage(page)}
                     /></> : <Spinner className='center-spinner' animation="grow" />}

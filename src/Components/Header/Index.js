@@ -1,11 +1,9 @@
 import Title from "./Title";
 import "./Search/SearchBox.css"
 import SearchBox from "./Search/SearchBox";
-import useFetch from "../CustomHooks/useFetch";
-const url = "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json";
+import { Container } from "react-bootstrap";
 
 export default function Header() {
-  const { data } = useFetch(url);
-    return <><Title/><SearchBox data={data} Placeholder="Search Book..."/></>
+    return <Container ><Title /><SearchBox Placeholder="Search Book..."/></Container>
   }
   

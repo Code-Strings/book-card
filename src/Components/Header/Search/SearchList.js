@@ -1,12 +1,10 @@
 import React from 'react';
-import CardPage from '../../Page/Index';
+import Page from '../../Page/Pagination/Page';
 
 function SearchList({ items }) {
-  const filtered = items.map(items =>  <CardPage data={items} />); 
+ // const filtered = items.map(items =>  <CardPage data={items} />); 
   return (
-    <div>
-      {filtered}
-    </div>
+    <Page data={items}/>
   );
 }
 

@@ -2,7 +2,6 @@ import Header from "./Components/Header/Index";
 import "./styles.css";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Page from "./Components/Page/Pagination/Page";
 
 export default function App() {
   const myStyle = {
@@ -11,13 +10,12 @@ export default function App() {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center"
-};
+  };
   return (
-    <div style={myStyle}>
-    <Container className="App">
+    <div id="body" style={myStyle}>
+      <Container className="pt-5 App">
         <Header />
-        <Page />
-    </Container>
+      </Container>
     </div>
   );
 }

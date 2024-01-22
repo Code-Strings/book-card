@@ -1,35 +1,51 @@
 import "./SearchBox.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchList from "./SearchList";
-const SearchBox = (props) => {
-  const [filterValue, setFilterValue] = useState([]);
+import useFetch from "../../CustomHooks/useFetch";
+import { Col, Container, Row } from "react-bootstrap";
 
-  const handleSearch = (event) => {
-    const searchValue = event.target.value;
-    const filterArray = props.data.filter((e) => {
-      return e.title.toLowerCase().includes(searchValue.toLowerCase());
-    });
-    if (searchValue === "") {
-      setFilterValue([]);
-    } else {
-      setFilterValue(filterArray);
-    }
+const SearchBox = (props) => {
+  const { data } = useFetch();
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  let string = "";
+
+  const handleSearch = e => {
+    setSearchTerm(e.target.value);
+    if(e.target.value.length !==0)string="Enter the key word";
   };
 
-  console.log("inside SearchBox: ",filterValue)
+  useEffect(() => {
+    const results = data.filter(item =>
+      //Searching card based on "title" and "author" for minimum of 1 entry
+      item.title.toLowerCase().includes(searchTerm) || item.author.toLowerCase().includes(searchTerm)
+    );
+    setSearchResults(results);
+  }, [searchTerm, data]);
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder={props.Placeholder}
-        onChange={handleSearch}
-      />
-      {filterValue.length !== 0 ? null : <p> Enter the key word</p>}
+    <>
+      <Container style={{display:"flex",justifyContent:"center",paddingTop:"40px"}} fluid>
+        <Row>
+          <Col>
+            <input
+              className="custom-input"
+              type="text"
+              placeholder="Search Book here...."
+              value={searchTerm}
+              onChange={handleSearch}
+            />
+           <button type="submit" class="icon"></button>
+          </Col>
+        </Row>
+
+      </Container>
+      <p>{string}</p>
       <div>
-        <SearchList items={filterValue}/>
+        <SearchList items={searchResults} />
       </div>
-    </div>
+    </>
   );
 };
 export default SearchBox;
