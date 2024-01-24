@@ -11,7 +11,7 @@ function CardPage(props) {
         <Col>
           <FlipCard BookData={item} key={`card-${index}`} />
         </Col>
-      ):<></>}
+      ):<h4>No Such Books found! </h4>}
     </Row>
     </Container>
   );

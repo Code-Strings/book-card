@@ -32,7 +32,7 @@ const SearchBox = (props) => {
             <input
               className="custom-input"
               type="text"
-              placeholder="Search Book here...."
+              placeholder="Search...."
               value={searchTerm}
               onChange={handleSearch}
             />
@@ -43,7 +43,7 @@ const SearchBox = (props) => {
       </Container>
       <p>{string}</p>
       <div>
-        <SearchList items={searchResults} />
+       <SearchList items={searchResults} />
       </div>
     </>
   );
